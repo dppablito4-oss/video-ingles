@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Change Thermal Paste on a Laptop | English Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0e17;
+      --bg-card: rgba(18, 25, 43, 0.75);
+      --bg-card-hover: rgba(26, 36, 62, 0.85);
+      --border-color: rgba(99, 102, 241, 0.2);
+      --border-glow: rgba(56, 189, 248, 0.4);
+      --primary: #38bdf8;
+      --primary-glow: #0284c7;
+      --accent: #818cf8;
+      --accent-green: #10b981;
+      --accent-orange: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --gradient-title: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-neon: 0 8px 32px 0 rgba(2, 132, 199, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* Header & Nav */
+    header {
+      backdrop-filter: blur(14px);
+      background: rgba(10, 14, 23, 0.85);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: var(--gradient-title);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      background: var(--gradient-title);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Video Player Card */
+    .video-section {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-neon);
+      margin-bottom: 2.5rem;
+      transition: border-color 0.3s;
+    }
+
+    .video-section:hover {
+      border-color: var(--border-glow);
+    }
+
+    .video-wrapper {
+      position: relative;
+      background: #000;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Video Custom Toolbar */
+    .video-controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .source-selector {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .file-input-label, .btn-action {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .file-input-label:hover, .btn-action:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .file-input-label input[type="file"] {
+      display: none;
+    }
+
+    .playback-pills {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .pill-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .pill-btn:hover, .pill-btn.active {
+      background: var(--primary);
+      color: #000;
+      border-color: var(--primary);
+    }
+
+    /* Language Switcher Mode */
+    .view-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      background: rgba(18, 25, 43, 0.5);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .mode-switch-group {
+      display: flex;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 4px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .mode-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .mode-btn.active {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(129, 140, 248, 0.3);
+    }
+
+    /* Content Layout */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    /* Materials Grid */
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .material-card {
+      background: rgba(18, 25, 43, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .material-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .mat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .mat-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .mat-info span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Step Cards */
+    .script-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .script-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+      opacity: 0.7;
+    }
+
+    .script-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-2px);
+    }
+
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 0.75rem;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-green);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .step-badge.intro {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .step-badge.conclusion {
+      background: rgba(192, 132, 252, 0.15);
+      color: #c084fc;
+      border-color: rgba(192, 132, 252, 0.3);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Dialogue Lines */
+    .dialogue-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .dialogue-item {
+      background: rgba(10, 14, 23, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background 0.2s;
+    }
+
+    .dialogue-item:hover {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .dialogue-content {
+      flex: 1;
+    }
+
+    .en-line {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .es-line {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    .audio-btn {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: var(--primary);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .audio-btn:hover {
+      background: var(--primary);
+      color: #000;
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    /* Flashcards Key Vocabulary */
+    .vocab-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+
+    .vocab-chip {
+      background: rgba(129, 140, 248, 0.1);
+      border: 1px solid rgba(129, 140, 248, 0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--text-muted);
+    }
+
+    .vocab-chip:hover {
+      background: rgba(129, 140, 248, 0.25);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .vocab-chip .term {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .vocab-chip .trans {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    .chip-speaker {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .video-controls-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .card-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+
+    /* Notification Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--primary);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .icon-inline {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="2" y1="20" x2="22" y2="20"></line>
+          </svg>
+        </div>
+        <div class="brand-title">Thermal Paste Guide</div>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span class="badge">English Oral Presentation</span>
+        <a href="https://github.com/dppablito4-oss/video-ingles/releases" target="_blank" class="btn-action" style="padding: 5px 12px; font-size: 0.8rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+          GitHub Releases
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Hero Header -->
+    <section class="hero">
+      <span class="badge" style="margin-bottom: 0.75rem; display: inline-block;">English Class Video Project</span>
+      <h1>How to Change Thermal Paste on a Laptop</h1>
+      <p>Interactive presentation website with bilingual transcript, pronunciation practice, and custom video player.</p>
+    </section>
+
+    <!-- Video Player Section -->
+    <section class="video-section">
+      <div class="video-wrapper">
+        <video id="mainVideo" controls preload="metadata">
+          <source src="./video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="video-controls-bar">
+        <div class="source-selector">
+          <label class="file-input-label">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            Load Video from PC
+            <input type="file" id="localVideoPicker" accept="video/mp4,video/webm,video/ogg,video/*">
+          </label>
+          <button class="btn-action" id="urlPromptBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            Load from URL
+          </button>
+          <span id="currentLoadedLabel" style="font-size: 0.85rem; color: var(--text-dim);">
+            Default: <code style="color: var(--primary);">./video.mp4</code>
+          </span>
+        </div>
+
+        <div class="playback-pills">
+          <span style="font-size: 0.8rem; color: var(--text-muted); margin-right: 4px;">Speed:</span>
+          <button class="pill-btn" onclick="setSpeed(0.75)">0.75x</button>
+          <button class="pill-btn active" onclick="setSpeed(1.0)">1.0x</button>
+          <button class="pill-btn" onclick="setSpeed(1.25)">1.25x</button>
+          <button class="pill-btn" onclick="setSpeed(1.5)">1.5x</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Vocabulary Pills -->
+    <section class="script-card" style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+        Key Vocabulary (Vocabulario Clave)
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">Click any word to hear its native English pronunciation:</p>
+      <div class="vocab-container">
+        <div class="vocab-chip" onclick="speakText('Thermal paste')">
+          <span class="term">Thermal paste</span>
+          <span class="trans">(Pasta térmica)</span>
+          <span class="chip-speaker">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="vocab-chip" onclick="speakText('Screwdriver')">
+          <span class="term">Screwdriver</span>
+          <span class="trans">(Desarmador)</span>
+          <span class="chip-speaker">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="vocab-chip" onclick="speakText('Heatsink')">
+          <span class="term">Heatsink</span>
+          <span class="trans">(Disipador)</span>
+          <span class="chip-speaker">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="vocab-chip" onclick="speakText('Cooling fan')">
+          <span class="term">Cooling fan</span>
+          <span class="trans">(Ventilador)</span>
+          <span class="chip-speaker">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="vocab-chip" onclick="speakText('Processor')">
+          <span class="term">Processor</span>
+          <span class="trans">(Procesador)</span>
+          <span class="chip-speaker">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="vocab-chip" onclick="speakText('Back cover')">
+          <span class="term">Back cover</span>
+          <span class="trans">(Tapa trasera)</span>
+          <span class="chip-speaker">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="vocab-chip" onclick="speakText('Tighten the screws')">
+          <span class="term">Tighten screws</span>
+          <span class="trans">(Ajustar tornillos)</span>
+          <span class="chip-speaker">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="vocab-chip" onclick="speakText('Reassemble')">
+          <span class="term">Reassemble</span>
+          <span class="trans">(Volver a armar)</span>
+          <span class="chip-speaker">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- View Modes (Dual, English, Spanish) -->
+    <div class="view-controls">
+      <div style="font-weight: 600; color: #fff;">
+        Video Script & Interactive Guide
+      </div>
+      <div class="mode-switch-group">
+        <button class="mode-btn active" onclick="setMode('dual')">Dual (EN / ES)</button>
+        <button class="mode-btn" onclick="setMode('en')">English Only</button>
+        <button class="mode-btn" onclick="setMode('es')">Español</button>
+      </div>
+    </div>
+
+    <!-- Script Sections -->
+    <div class="project-grid">
+
+      <!-- Section 1: Introduction -->
+      <article class="script-card">
+        <div class="card-header-row">
+          <h2 class="card-title">1. Introduction</h2>
+          <span class="step-badge intro">Intro</span>
+        </div>
+        <div class="dialogue-list">
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Hello everyone!"</p>
+              <p class="es-line">¡Hola a todos!</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Hello everyone!')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Today, I will show you how to change the thermal paste on a laptop."</p>
+              <p class="es-line">Hoy les mostraré cómo cambiar la pasta térmica en una laptop.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Today, I will show you how to change the thermal paste on a laptop.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 2: Materials -->
+      <article class="script-card">
+        <div class="card-header-row">
+          <h2 class="card-title">2. Materials (Materiales)</h2>
+          <span class="step-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-orange); border-color: rgba(245, 158, 11, 0.3);">Tools</span>
+        </div>
+        
+        <div class="dialogue-item" style="margin-bottom: 1rem;">
+          <div class="dialogue-content">
+            <p class="en-line">"First, we need some materials:"</p>
+            <p class="es-line">Primero, necesitamos algunos materiales:</p>
+          </div>
+          <button class="audio-btn" onclick="speakText('First, we need some materials:')" title="Listen pronunciation">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="materials-grid">
+          <div class="material-card" onclick="speakText('New thermal paste')">
+            <div class="mat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 2v7.31"></path>
+                <path d="M14 9.3V1.99"></path>
+                <path d="M8.5 2h7"></path>
+                <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
+                <path d="M5.52 16h12.96"></path>
+              </svg>
+            </div>
+            <div class="mat-info">
+              <h4>New thermal paste</h4>
+              <span>Pasta térmica nueva</span>
+            </div>
+          </div>
+          <div class="material-card" onclick="speakText('A small screwdriver')">
+            <div class="mat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <div class="mat-info">
+              <h4>A small screwdriver</h4>
+              <span>Un desarmador pequeño</span>
+            </div>
+          </div>
+          <div class="material-card" onclick="speakText('A clean cloth')">
+            <div class="mat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+            </div>
+            <div class="mat-info">
+              <h4>A clean cloth</h4>
+              <span>Un paño limpio</span>
+            </div>
+          </div>
+          <div class="material-card" onclick="speakText('An old plastic card')">
+            <div class="mat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <div class="mat-info">
+              <h4>An old plastic card</h4>
+              <span>Una tarjeta plástica vieja</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 3: Step 1 -->
+      <article class="script-card">
+        <div class="card-header-row">
+          <h2 class="card-title">Step 1: Open the laptop</h2>
+          <span class="step-badge">Paso 1: Abrir la laptop</span>
+        </div>
+        <div class="dialogue-list">
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"First, remove all the screws with the screwdriver."</p>
+              <p class="es-line">Primero, quita todos los tornillos con el desarmador.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('First, remove all the screws with the screwdriver.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Next, use the plastic card to open the back cover carefully."</p>
+              <p class="es-line">Luego, usa la tarjeta de plástico para abrir la tapa trasera con cuidado.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Next, use the plastic card to open the back cover carefully.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 3: Step 2 -->
+      <article class="script-card">
+        <div class="card-header-row">
+          <h2 class="card-title">Step 2: Remove the heatsink and clean</h2>
+          <span class="step-badge">Paso 2: Retirar disipador y limpiar</span>
+        </div>
+        <div class="dialogue-list">
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Now, remove the screws from the cooling fan and heatsink."</p>
+              <p class="es-line">Ahora, quita los tornillos del ventilador y disipador.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Now, remove the screws from the cooling fan and heatsink.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Take out the heatsink."</p>
+              <p class="es-line">Saca el disipador.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Take out the heatsink.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Clean the old thermal paste with the cloth."</p>
+              <p class="es-line">Limpia la pasta térmica vieja con el paño.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Clean the old thermal paste with the cloth.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 3: Step 3 -->
+      <article class="script-card">
+        <div class="card-header-row">
+          <h2 class="card-title">Step 3: Apply new paste</h2>
+          <span class="step-badge">Paso 3: Aplicar pasta nueva</span>
+        </div>
+        <div class="dialogue-list">
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Apply the new thermal paste in an X shape on the processor."</p>
+              <p class="es-line">Aplica la pasta térmica nueva en forma de cruz sobre el procesador.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Apply the new thermal paste in an X shape on the processor.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 3: Step 4 -->
+      <article class="script-card">
+        <div class="card-header-row">
+          <h2 class="card-title">Step 4: Reassemble the laptop</h2>
+          <span class="step-badge">Paso 4: Volver a armar la laptop</span>
+        </div>
+        <div class="dialogue-list">
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Put the heatsink back and tighten the screws."</p>
+              <p class="es-line">Vuelve a colocar el disipador y ajusta los tornillos.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Put the heatsink back and tighten the screws.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Connect everything again."</p>
+              <p class="es-line">Conecta todo de nuevo.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Connect everything again.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Put the back cover on and put back all the screws."</p>
+              <p class="es-line">Coloca la tapa trasera y vuelve a poner todos los tornillos.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Put the back cover on and put back all the screws.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 4: Conclusion -->
+      <article class="script-card">
+        <div class="card-header-row">
+          <h2 class="card-title">4. Conclusion</h2>
+          <span class="step-badge conclusion">Closing</span>
+        </div>
+        <div class="dialogue-list">
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"And that is it!"</p>
+              <p class="es-line">¡Y eso es todo!</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('And that is it!')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="dialogue-item">
+            <div class="dialogue-content">
+              <p class="en-line">"Thank you for watching."</p>
+              <p class="es-line">Gracias por ver.</p>
+            </div>
+            <button class="audio-btn" onclick="speakText('Thank you for watching.')" title="Listen pronunciation">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <span id="toastMsg">Notification message</span>
+  </div>
+
+  <footer>
+    <p>English Video Project &mdash; <strong>How to Change Thermal Paste on a Laptop</strong></p>
+    <p style="margin-top: 6px;">Created for high school / college English presentation.</p>
+  </footer>
+
+  <script>
+    const video = document.getElementById('mainVideo');
+    const localVideoPicker = document.getElementById('localVideoPicker');
+    const urlPromptBtn = document.getElementById('urlPromptBtn');
+    const currentLoadedLabel = document.getElementById('currentLoadedLabel');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+
+    // Auto-detect video from GitHub Releases automatically on load
+    async function fetchLatestReleaseVideo() {
+      try {
+        currentLoadedLabel.innerHTML = `Buscando en GitHub Releases...`;
+        const res = await fetch('https://api.github.com/repos/dppablito4-oss/video-ingles/releases/latest');
+        if (res.ok) {
+          const data = await res.json();
+          const videoAsset = data.assets && data.assets.find(a => /\.(mp4|webm|mov|mkv)$/i.test(a.name)) || (data.assets && data.assets[0]);
+          if (videoAsset && videoAsset.browser_download_url) {
+            video.src = videoAsset.browser_download_url;
+            currentLoadedLabel.innerHTML = `GitHub Release: <strong>${videoAsset.name}</strong>`;
+            showToast(`Video cargado desde GitHub Release: ${videoAsset.name}`);
+            return true;
+          }
+        }
+      } catch (err) {
+        console.warn('GitHub API check:', err);
+      }
+      currentLoadedLabel.innerHTML = `Default: <code style="color: var(--primary);">./video.mp4</code>`;
+      return false;
+    }
+
+    // Try fetching on start
+    fetchLatestReleaseVideo();
+
+    // Local file selector
+    localVideoPicker.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const fileURL = URL.createObjectURL(file);
+        video.src = fileURL;
+        video.play();
+        currentLoadedLabel.innerHTML = `Loaded: <strong>${file.name}</strong>`;
+        showToast(`Reproduciendo video local: ${file.name}`);
+      }
+    });
+
+    // Custom URL prompt
+    urlPromptBtn.addEventListener('click', () => {
+      const url = prompt('Ingresa el link directo del video (MP4 / WebM / GitHub Release URL):', '');
+      if (url && url.trim()) {
+        video.src = url.trim();
+        video.play();
+        currentLoadedLabel.innerHTML = `Loaded from URL`;
+        showToast('Cargando video desde URL...');
+      }
+    });
+
+    // Speed Controller
+    function setSpeed(rate) {
+      video.playbackRate = rate;
+      document.querySelectorAll('.playback-pills .pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim() === `${rate}x`);
+      });
+      showToast(`Velocidad ajustada a ${rate}x`);
+    }
+
+    // Text to Speech Pronunciation
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        
+        const voices = window.speechSynthesis.getVoices();
+        const enVoice = voices.find(v => v.lang.startsWith('en'));
+        if (enVoice) utterance.voice = enVoice;
+
+        window.speechSynthesis.speak(utterance);
+        showToast(`Pronunciando: "${text}"`);
+      } else {
+        alert('Tu navegador no soporta síntesis de voz.');
+      }
+    }
+
+    // Dual / EN / ES View Modes
+    function setMode(mode) {
+      document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const enLines = document.querySelectorAll('.en-line');
+      const esLines = document.querySelectorAll('.es-line');
+
+      if (mode === 'dual') {
+        enLines.forEach(el => el.style.display = 'flex');
+        esLines.forEach(el => el.style.display = 'block');
+        showToast('Modo bilingüe activado (Inglés y Español)');
+      } else if (mode === 'en') {
+        enLines.forEach(el => el.style.display = 'flex');
+        esLines.forEach(el => el.style.display = 'none');
+        showToast('Modo solo inglés activado');
+      } else if (mode === 'es') {
+        enLines.forEach(el => el.style.display = 'none');
+        esLines.forEach(el => el.style.display = 'block');
+        showToast('Modo solo español activado');
+      }
+    }
+
+    // Toast Alert Helper
+    let toastTimeout;
+    function showToast(message) {
+      clearTimeout(toastTimeout);
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
